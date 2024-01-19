@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Call Alert App</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Alert App by kushgra</title>
+  </head>
+  <body>
     <h1>Call Alert App</h1>
-    
+
     <label for="phoneNumber">Enter Emergency Number:</label>
-    <input type="tel" id="phoneNumber" placeholder="Enter phone number">
-    
+    <input type="tel" id="phoneNumber" placeholder="Enter phone number" />
+
     <button onclick="setEmergencyNumber()">Set Emergency Number</button>
 
     <script>
-        let emergencyNumber;
+      let emergencyNumber;
 
-        function setEmergencyNumber() {
-            emergencyNumber = document.getElementById('phoneNumber').value;
-            alert(`Emergency number set to: ${emergencyNumber}`);
+      function setEmergencyNumber() {
+        emergencyNumber = document.getElementById('phoneNumber').value;
+        alert(`Emergency number set to: ${emergencyNumber}`);
+      }
+
+      function handleIncomingCall(incomingNumber) {
+        if (incomingNumber === emergencyNumber) {
+          // This is where you would ideally trigger a call or change the phone's silent mode.
+          // However, doing this in a web app is not possible due to security restrictions.
+          alert(`Emergency call from ${incomingNumber}!`);
         }
+      }
 
-        function handleIncomingCall(incomingNumber) {
-            if (incomingNumber === emergencyNumber) {
-                // This is where you would ideally trigger a call or change the phone's silent mode.
-                // However, doing this in a web app is not possible due to security restrictions.
-                alert(`Emergency call from ${incomingNumber}!`);
-            }
-        }
-
-        // Simulate an incoming call
-        setTimeout(() => {
-            const incomingNumber = prompt('Simulating an incoming call. Enter the phone number:');
-            handleIncomingCall(incomingNumber);
-        }, 5000); // Simulate call after 5 seconds
+      // Simulate an incoming call
+      setTimeout(() => {
+        const incomingNumber = prompt(
+          'Simulating an incoming call. Enter the phone number:'
+        );
+        handleIncomingCall(incomingNumber);
+      }, 5000); // Simulate call after 5 seconds
     </script>
-</body>
+  </body>
 </html>
