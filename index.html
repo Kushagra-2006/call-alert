@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet"href="style.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Call Alert App by kushgra</title>
   </head>
   <body>
+    <div>
     <h1>Call Alert App</h1>
 
     <label for="phoneNumber">Enter Emergency Number:</label>
     <input type="tel" id="phoneNumber" placeholder="Enter phone number" />
 
     <button onclick="setEmergencyNumber()">Set Emergency Number</button>
-
+</div>
     <script>
       let emergencyNumber;
 
@@ -29,7 +31,7 @@
         }
       }
 
-      // Simulate an incoming call
+      // Simulate an incoming call of the coding
       setTimeout(() => {
         const incomingNumber = prompt(
           'Simulating an incoming call. Enter the phone number:'
